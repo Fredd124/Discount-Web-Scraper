@@ -34,7 +34,7 @@ def main():
         jsonResponse = json.loads(driver.find_element(By.TAG_NAME, "body").text)
         total_pages = jsonResponse["pageInfo"]["total_pages"]
 
-        for page in range(1, 1 + 1):
+        for page in range(1, total_pages + 1):
             driver.get(url.format(page=page))
             time.sleep(5)  
             jsonResponse = json.loads(driver.find_element(By.TAG_NAME, "body").text)
